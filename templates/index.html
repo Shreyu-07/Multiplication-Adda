@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+    <style>
+        html,
+        body {
+            margin: 0%;
+            padding: 0%;
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            background-image: linear-gradient(green, yellow);
+            background-repeat: no-repeat;
+
+        }
+
+        hr {
+            background-color: black;
+            height: 1rem;
+        }
+
+        .op {
+            border: 2rem;
+            background-color: black;
+            color: white;
+            font-weight: bold;
+            width: 30rem;
+            border-radius: 30px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+
+    <div class="container">
+        <h1>Welcome to the multiplication adda!!!</h1>
+        <hr>
+        <form action="/" method="post">
+            <center>
+                <div class="container">
+                    <span>
+                        <b>Number (eg.:3) : </b><br><input type="number"  name="number" value="{{first}}">
+                    </span>
+                    <br><br>
+
+
+                    <span>
+                        <b>Till what range (eg.:10) :</b> <br><input type="number" name="tonumber" value="{{second}}">
+                    </span><br><br>
+
+                    <button type="submit" class="btn btn-success">Multiply</button>
+                </div>
+            </center>
+        </form>
+
+        <br><br>
+        <div class="op container">
+            <center>
+                <div class="answer">
+                    {%if ans%}
+                    {%for i in range(1,second+1)%}
+                    <li style="list-style: none;">{{first}} x {{i}} = {{ans[i-1]}}</li>
+                    {%endfor%}
+                    {%endif%}
+                </div>
+            </center>
+        </div>
+
+
+
+
+    </div>
+
+    <div class="card text-center fixed-bottom" style="background-color: black; color: white;">
+        <div class="card-footer">
+            Made by Shreyas Shridhar Kulkarni | 2025(PY)
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>
